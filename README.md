@@ -39,7 +39,7 @@ The DNA sequence was saved in FASTA format and imported into SnapGene Viewer for
 Potential Cas9 PAM regions (NGG motifs) were identified using SnapGene Viewer.
 
 ### Figure
-![PAM Analysis](figures/snapgene_pam_analysis.png)
+![PAM Analysis]
 
 ---
 
@@ -52,7 +52,8 @@ Parameters:
 - Target Type: Knockout
 
 ### Figure
-![CHOPCHOP Results](figures/chopchop_results.png)
+![CHOPCHOP Results](<img width="1352" height="632" alt="chopchop_results" src="https://github.com/user-attachments/assets/69363c2c-164f-4309-b138-66365a6d462e" />
+)
 
 ---
 
@@ -72,15 +73,17 @@ Selected guides are provided in:
 The selected guide RNA and PAM region were visualized in SnapGene Viewer.
 
 ### Figure
-![Guide Visualization](figures/cas9_guide_visualization.png)
+![Guide Visualization](<img width="1365" height="721" alt="snapgene_pam_analysis png" src="https://github.com/user-attachments/assets/13e9c27b-3c38-4c8c-aecb-25305aa4ff91" />
+)
 
 ---
 
 ## Step 7 — Off-target Validation
-Selected guides were validated using CRISPOR to analyze specificity and potential off-target effects.
+Selected guides were validated using CHOPCHOP to analyze specificity and potential off-target effects.
 
 ### Figure
-![CRISPOR Validation](figures/crispor_validation.png)
+![CHOPCHOP Validation](<img width="1365" height="716" alt="guide1_pam_region" src="https://github.com/user-attachments/assets/472e533c-1bcc-490e-8a96-517979b74a92" />
+)
 
 ---
 
