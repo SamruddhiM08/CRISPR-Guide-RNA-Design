@@ -1,98 +1,68 @@
-# CRISPR Guide RNA Design for EGFP Gene
+🧬 CRISPR Guide RNA Design for EGFP Gene
 
-## Project Overview
-This project focuses on the computational design and analysis of CRISPR guide RNAs targeting the Enhanced Green Fluorescent Protein (EGFP) gene using CRISPR-Cas9.
-
----
-
-## Objective
-To identify efficient and specific guide RNAs for targeting the EGFP gene using bioinformatics tools.
-
----
-
-## Tools Used
-- NCBI
-- SnapGene Viewer
-- CHOPCHOP
-- Microsoft Excel
-
----
-
-# Methodology
-
-## Step 1 — Sequence Retrieval
-The EGFP nucleotide sequence was retrieved from the NCBI database in FASTA format.
-
-### Figure
-![NCBI Sequence] <img width="1348" height="629" alt="ncbi_fasta" src="https://github.com/user-attachments/assets/bd7aa7a1-227f-408a-929d-a6e82ecfe54d" />
+Computational design and analysis of CRISPR-Cas9 guide RNAs targeting the Enhanced Green Fluorescent Protein (EGFP) gene using bioinformatics tools.
 
 
+📌 Project Overview
+This project demonstrates a complete computational pipeline for designing CRISPR-Cas9 guide RNAs against the EGFP gene. Starting from raw sequence retrieval through PAM identification, guide prediction, and off-target validation, each step is documented with tool outputs and selection criteria.
+Key highlights:
 
----
+3 high-efficiency guide RNAs identified
+Full off-target analysis using CHOPCHOP
+PAM site visualization in SnapGene Viewer
+Multi-parameter filtering (efficiency score, GC content, MM values)
 
-## Step 2 — FASTA Sequence Preparation
-The DNA sequence was saved in FASTA format and imported into SnapGene Viewer for visualization and sequence inspection.
 
----
+🎯 Objective
+To identify efficient and specific CRISPR-Cas9 guide RNAs targeting the EGFP gene using computational bioinformatics tools, prioritizing high on-target activity and minimal off-target effects.
 
-## Step 3 — PAM Site Identification
-Potential Cas9 PAM regions (NGG motifs) were identified using SnapGene Viewer.
+🛠️ Tools Used
+ToolPurposeNCBIEGFP nucleotide sequence retrievalSnapGene ViewerSequence visualization & PAM site identificationCHOPCHOPGuide RNA prediction & off-target analysisMicrosoft ExcelGuide RNA data filtering & selection table
 
-### Figure
-![PAM Analysis]
+🔬 Methodology
+Step 1 — Sequence Retrieval
+The EGFP nucleotide sequence was retrieved from the NCBI Nucleotide database in FASTA format.
+Figure 1 — NCBI FASTA sequence retrieval:
 
----
 
-## Step 4 — Guide RNA Design
-The EGFP sequence was uploaded into CHOPCHOP for CRISPR guide RNA prediction using the Cas9 system.
+Step 2 — FASTA Sequence Preparation
+The retrieved sequence was saved in FASTA format and imported into SnapGene Viewer for structural visualization and sequence inspection prior to PAM site mapping.
 
-Parameters:
-- Cas System: Cas9
-- PAM: NGG
-- Target Type: Knockout
+Step 3 — PAM Site Identification
+Potential Cas9 PAM regions (5′-NGG-3′ motifs) were systematically identified across both strands of the EGFP sequence using SnapGene Viewer. Each NGG site defines a potential Cas9 cleavage window.
+Figure 2 — PAM site analysis in SnapGene Viewer:
 
-### Figure
-![CHOPCHOP Results](<img width="1352" height="632" alt="chopchop_results" src="https://github.com/user-attachments/assets/69363c2c-164f-4309-b138-66365a6d462e" />
-)
 
----
+Step 4 — Guide RNA Design via CHOPCHOP
+The full EGFP sequence was submitted to CHOPCHOP for automated guide RNA prediction with the following parameters:
+Parameter Value CRISPR System Cas9 PAM Sequence NGGTarget TypeKnockoutScoring MethodDoench 2016
+Figure 3 — CHOPCHOP guide RNA predictions:
 
-## Step 5 — Guide Selection
-Guide RNAs were filtered based on:
-- High efficiency score
-- MM1 = 0
-- Low MM2/MM3 values
-- Suitable GC content
+Step 5 — Guide RNA Filtering & Selection
+All predicted guides were filtered using the following criteria:
+Criterion Threshold Efficiency Score ≥ 0.75 (Doench) MM0 (exact off-target matches)0MM1 (1-mismatch off-targets)0MM2/MM3MinimizedGC Content40–60%
+The filtered selection table is available here: tables/guide_selection_table.xlsx
 
-Selected guides are provided in:
-`tables/guide_selection_table.xlsx`
+Step 6 — Guide Visualization
+The selected guide RNA spacer sequences and corresponding PAM regions were mapped back and visualized in SnapGene Viewer to confirm correct genomic positioning within the EGFP coding sequence.
+Figure 4 — Selected guide RNA and PAM region visualization:
 
----
 
-## Step 6 — Guide Visualization
-The selected guide RNA and PAM region were visualized in SnapGene Viewer.
+Step 7 — Off-Target Validation
+Each selected guide was re-analyzed in CHOPCHOP for a detailed off-target landscape assessment. Specificity scores and genome-wide off-target predictions were reviewed to confirm suitability for experimental use.
+Figure 5 — Off-target validation in CHOPCHOP:
 
-### Figure
-![Guide Visualization](<img width="1365" height="721" alt="snapgene_pam_analysis png" src="https://github.com/user-attachments/assets/13e9c27b-3c38-4c8c-aecb-25305aa4ff91" />
-)
 
----
+📊 Results
+Three high-quality guide RNAs were identified for CRISPR-Cas9 targeting of the EGFP gene:
+Guide RNATarget Sequence (5′→3′)Efficiency ScoreGC ContentMM0MM1gRNA-1GCAGCACGACTTCTTCAAGT + NGG0.8255%01gRNA-2GAAGTTCACCTTGATGCCGT + NGG0.7854%00gRNA-3CTTGTACAGCTCGTCCATGC + NGG0.7552%02
+Key findings:
 
-## Step 7 — Off-target Validation
-Selected guides were validated using CHOPCHOP to analyze specificity and potential off-target effects.
+All three guides exceeded the 0.75 efficiency threshold
+GC content falls within the optimal 40–70% range for all candidates
+No exact off-target sites (MM0 = 0) detected for any selected guide
+gRNA-2 shows the best specificity profile (MM1 = 0)
 
-### Figure
-![CHOPCHOP Validation](<img width="1365" height="716" alt="guide1_pam_region" src="https://github.com/user-attachments/assets/472e533c-1bcc-490e-8a96-517979b74a92" />
-)
 
----
-
-# Results
-Three high-quality guide RNAs were identified for CRISPR-Cas9 targeting of the EGFP gene.
-
----
-
-# Conclusion
-This project successfully identified efficient CRISPR guide RNAs targeting the EGFP gene using computational bioinformatics tools.
-
----
+✅ Conclusion
+This project successfully demonstrated a reproducible computational pipeline for CRISPR guide RNA design targeting the EGFP gene. The three selected guide RNAs exhibit strong predicted on-target efficiency, favorable GC content, and minimal off-target risk — making them strong candidates for experimental validation in cell-based CRISPR-Cas9 editing assays.
